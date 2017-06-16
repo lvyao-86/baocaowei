@@ -36,34 +36,36 @@ require(['config'],function(){
 				      email: "请输入一个正确的邮箱"
 			    }
 			})
-		// $('#form').blur=function(e){
-		// 	e = e || window.event;
-		// 	var target =e.target || e.srcElement;
-		// 	if(target.id==='mobile'){
-		// 		var _pnum=$(this).value
-		// 			if(!/^1[345789]\d{9}$/.test(_pnum)){
-		// 				alert('手机号不正确')
-		// 				return false;
-		// 			}
-		// 	}
 
-		// }
-		// 传递用户信息到后台
-		// $('#zhuche').on('click',function(){
-		
-		// 	$.ajax({
-		// 		url:'../api/reg.php',
-		// 		data:{
-		// 			username:$('#username').val(),
-		// 			password:$('#password').val()
-		// 		},
-		// 		success:function(res){
-		// 			console.log(res);
-		// 			if(res === 'ok'){
-		// 				alert('注册成功')
-		// 			}
-		// 		}
-		// 	});
-		// });
+			// $('#form').blur=function(e){
+			// 	e = e || window.event;
+			// 	var target =e.target || e.srcElement;
+			// 	if(target.id==='mobile'){
+			// 		var _pnum=$(this).value
+			// 			if(!/^1[345789]\d{9}$/.test(_pnum)){
+			// 				alert('手机号不正确')
+			// 				return false;
+			// 			}
+			// 	}
+			// }
+			$('denglu').on('click',function(){
+				
+			})
+			// 传递用户信息到后台
+			$('#zhuche').on('click',function(){	
+				$.ajax({
+					url:'../api/reg.php',
+					data:{
+						username:$('#mobile').val(),
+						password:$('#password').val()
+					},
+					success:function(res){
+						console.log(res);
+						if(res === 'ok'){
+							alert('注册成功')
+						}
+					}
+				});
+			});
 	});
 });
