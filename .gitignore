@@ -1,5 +1,7 @@
-#过滤node模块文件夹
-/node_modules
+﻿#过滤node模块文件夹
+/node_modules 
+
+/src/cookie
 
 /doc
 
