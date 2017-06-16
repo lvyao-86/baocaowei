@@ -1,0 +1,168 @@
+@import 'common';
+%fl{float:left};
+%fr{float:right}
+/***顶部****/ 
+header{height:30px;width:100%;background-color:#F4F3F1;
+		.left{
+			@extend %fl;
+			li{
+				@extend %fl;
+				height: 100%;
+				line-height: 30px;
+				
+				a{
+					padding: 0 10px;
+				}
+			}
+
+		}
+		.right{
+			@extend %fr;
+			li{
+				@extend %fl;
+				height: 100%;
+				line-height: 30px;
+				padding: 0 10px;
+			}
+		}
+}
+/*******导航****/ 
+nav{
+	/**********上部搜索导航*************/
+	.top{
+		height: 110px;
+		background: #FFFFFF;
+		.logo{
+			@extend %fl;}
+		.search{
+			@extend %fl;padding:35px 0;font-size:14px;
+			position: relative;
+			input{
+				text-indent:2em;
+				width: 550px;height: 36px;border:3px solid #D6362A;border-radius:18px;
+			}
+			button{
+				width: 100px;height: 26px;background: #D6362A;
+				color:white;text-align:center;border:0;border-radius:18px;
+				position:absolute;left:444px;top:41px;}
+			.shopcar{
+				display:inline-block;
+				width: 165px;height:36px;border-radius:18px;background: #D6362A;text-align:center;
+				padding:8px 0;
+				a{
+					color:white;
+					strong{
+						padding:0 2px;}
+				}
+			}
+
+		}
+
+	}
+	/*********下部导航栏导航条**************/
+	.bottom{
+		height: 35px;width: 100%;
+		line-height: 35px;
+		padding-left:40px;
+		background:#D6362A;	
+		.list2{
+			height: 100%;
+			a{
+			color:white;padding:0 15px;
+			}
+			span{
+				position: relative;
+				ul{
+					position: absolute;
+					top: 26px;
+					right: 0;
+					background:#D6362A;	
+					display:none;
+					z-index:10000;
+					&:hover{
+						display:block;
+					}
+				}
+			}
+		}
+	
+	}
+}
+/******分类********/
+#classify{
+	float:left;
+	height:220px;
+	width: 100%;
+	margin-bottom:40px;
+	ul{
+		padding-left:47px;
+		li{
+			float:left;
+			width: 171px;
+			height: 220px;
+			background:red;
+			margin-right:28px;
+		}
+	}
+}
+/*********尾部********/
+footer{
+	float:left;
+	background:#F4F3F1;
+	.footerTop{
+		height: 195px;
+		background:#F4F3F1;
+		ul{
+			padding:49px 0 49px 47px;
+			li{
+				float:left;
+				width: 175px;
+				height: 111px;
+				margin-right:26px;
+				text-align:center;
+				img{margin:0 auto;}
+				p{
+					height:24px;
+					padding-top:5px;
+				}
+			}
+		}
+	}
+	.footerMiddle{
+		width: 100%;
+		height:180px;
+		background:#F4F3F1;
+		padding-left:100px;
+		.containter{
+			width: 1200px;
+			height:100%;
+			border-top:1px solid white;
+		}
+		div{
+				padding-top:20px;
+				float:left;
+				width: 230px;
+				h4{
+					font-size:14px;
+				}
+				p{
+					padding-top:10px;
+					height:20px;
+				}
+				a{color:black;}
+			}		
+	}
+	.footerBottom{
+		padding-bottom:50px;
+		p{text-align:center;
+			height: 29px;
+			a{
+				padding:0 15px;
+				border-right:1px solid black;
+				&:last-child{
+					border:none;
+				}
+			}
+		}
+	}
+}

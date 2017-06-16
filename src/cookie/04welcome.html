@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04welcome</title>
+	<script>
+		window.onload = function(){
+			var msg = document.getElementById('msg');
+
+			// 读取cookie
+			var cookies = document.cookie;
+				//字符串'..............'
+			if(cookies){
+				var arr = cookies.split('; ');
+				//数组[.=.,.=.,.=.,.=.]
+				arr.forEach(function(item){
+					//item表示遍历后的组员
+					var temp = item.split('=');
+					//把组员以'='为标识符再转为数组，此时每个小数组的索引值只有0和1，0对应的是属性，1对应的是属性值[[.,.],[.,.],[.,.]]
+					if(temp[0] === 'username'){
+						msg.innerHTML = temp[1] + '，欢迎登录国家安全系统，<button>退出</button>'
+					}
+				});
+			}
+
+
+			// 删除cookie
+			// 利用设置有效时间来达到删除的效果
+			msg.onclick = function(e){
+				//e的兼容性写法
+				e = e || window.event;
+				var target = e.target || e.srcElement;
+
+				if(target.tagName.toLowerCase() === 'button'){
+					console.log(target)
+					var now = new Date('2017-5-9');
+					//重置cookies，时间过期						//expires:有效期
+					document.cookie = 'username=null;expires=' + now.toUTCString();
+						//toUTCString():协调世界时，“原子物理时间”
+					location.href = '04七天免登录.html';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="msg"></div>
+</body>
+</html>
